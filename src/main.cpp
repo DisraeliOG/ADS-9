@@ -1,11 +1,9 @@
 // Copyright 2022 NNTU-CS
 #include "tree.h"
-
-#include <chrono>
-#include <fstream>
-
 #include <iostream>
+#include <chrono>
 #include <random>
+#include <fstream>
 #include <vector>
 
 void PrintVector(const std::vector<char>& vec) {
@@ -50,7 +48,7 @@ int main() {
     end = std::chrono::high_resolution_clock::now();
     t3.push_back(std::chrono::duration<double, std::milli>(end - start).count());
 
-    std::cout << "n = " << n << ", k = " << k << " \u2192 getPerm2: \n";
+    std::cout << "n = " << n << ", k = " << k << " → getPerm2: ";
     PrintVector(p2);
   }
 
@@ -58,10 +56,7 @@ int main() {
   out << "n,getAllPerms,getPerm1,getPerm2\n";
 
   for (size_t i = 0; i < sizes.size(); ++i) {
-    out << sizes[i] << ","
-        << t1[i] << ","
-        << t2[i] << ","
-        << t3[i] << "\n";
+    out << sizes[i] << "," << t1[i] << "," << t2[i] << "," << t3[i] << "\n";
   }
   out.close();
 
