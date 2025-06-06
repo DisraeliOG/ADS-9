@@ -2,18 +2,17 @@
 #ifndef INCLUDE_TREE_H_
 #define INCLUDE_TREE_H_
 
-#pragma once
 #include <memory>
 #include <vector>
 
 class PMTree {
 public:
-    explicit PMTree(const std::vector<char>& elements);
-    explicit PMTree(const std::vector<char>& elements,
-                    const std::vector<char>& path);
-
     char value;
     std::vector<std::shared_ptr<PMTree>> children;
+
+    PMTree() = default;
+    explicit PMTree(const std::vector<char>& elements);
+    PMTree(const std::vector<char>& elements, const std::vector<char>& path);
 
     void collectPermutations(std::vector<std::vector<char>>& perms,
                              std::vector<char>& current);
@@ -22,8 +21,7 @@ public:
     int factorial(int n) const;
 
 private:
-    void build(const std::vector<char>& elements,
-               const std::vector<char>& path);
+    void build(const std::vector<char>& elements, const std::vector<char>& path);
 };
 
 std::vector<std::vector<char>> getAllPerms(PMTree& tree);
