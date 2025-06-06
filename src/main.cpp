@@ -4,6 +4,7 @@
 #include <chrono>
 #include <random>
 #include <fstream>
+#include <vector>
 
 void PrintVector(const std::vector<char>& vec) {
   for (char c : vec) {
