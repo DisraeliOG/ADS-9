@@ -1,25 +1,19 @@
 // Copyright 2022 NNTU-CS
-#include "tree.h"
-
-#include <cstdlib>
-#include <fstream>
-
-#include <iostream>
-#include <locale>
-#include <memory>
-#include <vector>
+#include  <iostream>
+#include  <fstream>
+#include  <locale>
+#include  <cstdlib>
+#include  "tree.h"
 
 PMTree::PMTree(const std::vector<char>& elements) {
   build(elements, {});
 }
 
-PMTree::PMTree(const std::vector<char>& elements,
-               const std::vector<char>& path) {
+PMTree::PMTree(const std::vector<char>& elements, const std::vector<char>& path) {
   build(elements, path);
 }
 
-void PMTree::build(const std::vector<char>& elements,
-                   const std::vector<char>& path) {
+void PMTree::build(const std::vector<char>& elements, const std::vector<char>& path) {
   if (elements.empty()) {
     return;
   }
