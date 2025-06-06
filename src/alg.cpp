@@ -3,6 +3,8 @@
 #include <fstream>
 #include <iostream>
 #include <locale>
+#include <memory>
+#include <vector>
 #include "tree.h"
 
 PMTree::PMTree(const std::vector<char>& elements) {
