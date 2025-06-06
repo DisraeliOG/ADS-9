@@ -1,4 +1,3 @@
-// Copyright 2022 NNTU-CS
 #ifndef INCLUDE_TREE_H_
 #define INCLUDE_TREE_H_
 
@@ -12,7 +11,8 @@ public:
 
     PMTree() = default;
     explicit PMTree(const std::vector<char>& elements);
-    PMTree(const std::vector<char>& elements, const std::vector<char>& path);
+    PMTree(const std::vector<char>& elements,
+           const std::vector<char>& path);
 
     void collectPermutations(std::vector<std::vector<char>>& perms,
                              std::vector<char>& current);
@@ -21,7 +21,8 @@ public:
     int factorial(int n) const;
 
 private:
-    void build(const std::vector<char>& elements, const std::vector<char>& path);
+    void build(const std::vector<char>& elements,
+               const std::vector<char>& path);
 };
 
 std::vector<std::vector<char>> getAllPerms(PMTree& tree);
