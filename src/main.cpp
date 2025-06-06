@@ -1,10 +1,10 @@
+// Copyright 2022 NNTU-CS
+#include "tree.h"
 #include <chrono>
 #include <fstream>
 #include <iostream>
 #include <random>
 #include <vector>
-
-#include "tree.h"
 
 void PrintVector(const std::vector<char>& vec) {
   for (char c : vec) {
@@ -36,27 +36,23 @@ int main() {
     auto start = std::chrono::high_resolution_clock::now();
     auto perms = getAllPerms(tree);
     auto end = std::chrono::high_resolution_clock::now();
-    t1.push_back(
-        std::chrono::duration<double, std::milli>(end - start).count());
+    t1.push_back(std::chrono::duration<double, std::milli>(end - start).count());
 
     start = std::chrono::high_resolution_clock::now();
     auto p1 = getPerm1(tree, k);
     end = std::chrono::high_resolution_clock::now();
-    t2.push_back(
-        std::chrono::duration<double, std::milli>(end - start).count());
+    t2.push_back(std::chrono::duration<double, std::milli>(end - start).count());
 
     start = std::chrono::high_resolution_clock::now();
     auto p2 = getPerm2(tree, k);
     end = std::chrono::high_resolution_clock::now();
-    t3.push_back(
-        std::chrono::duration<double, std::milli>(end - start).count());
+    t3.push_back(std::chrono::duration<double, std::milli>(end - start).count());
 
-    std::cout << "n = " << n << ", k = " << k << " → getPerm2: ";
+    std::cout << "n = " << n << ", k = " << k << " \u2192 getPerm2: ";
     PrintVector(p2);
   }
 
-  std::ofstream out(
-      "C:\\Users\\jolly\\CLionProjects\\ADS-9-main\\result\\times.csv");
+  std::ofstream out("C:\\Users\\jolly\\CLionProjects\\ADS-9-main\\result\\times.csv");
   out << "n,getAllPerms,getPerm1,getPerm2\n";
 
   for (size_t i = 0; i < sizes.size(); ++i) {
