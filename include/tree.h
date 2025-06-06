@@ -1,13 +1,13 @@
 // Copyright 2022 NNTU-CS
 #ifndef INCLUDE_TREE_H_
 #define INCLUDE_TREE_H_
-#include <memory>  //
+#include <memory>  / /
 #include <vector>  //
 class PMTree {
-private:
+ private:
     void build(const std::vector<char>& elements,
                const std::vector<char>& path);
-public:
+ public:
     char value;  //
     std::vector<std::shared_ptr<PMTree>> children;  //
 
